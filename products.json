@@ -1,0 +1,101 @@
+[
+  {
+    "id": 1,
+    "name": "Glitter Gloss",
+    "category": "lips",
+    "price": 45,
+    "desc": "Sheer sparkle finish, long-lasting and non-sticky",
+    "image": "",
+    "images": [],
+    "hot": true,
+    "stock": 3,
+    "variants": [
+      {
+        "label": "Shade",
+        "options": [
+          { "label": "Pink Fizz", "hex": "#FF87BE" },
+          { "label": "Berry Pop", "hex": "#8B2B6B" },
+          { "label": "Clear",     "hex": "#D6F0FF" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Dream Serum",
+    "category": "skin",
+    "price": 85,
+    "desc": "Lightweight hydrating glow boost for all skin types",
+    "image": "",
+    "images": [],
+    "hot": false,
+    "stock": 12,
+    "variants": []
+  },
+  {
+    "id": 3,
+    "name": "Cloud Blush",
+    "category": "skin",
+    "price": 60,
+    "desc": "Buildable soft rosy flush, blends like a dream",
+    "image": "",
+    "images": [],
+    "hot": false,
+    "stock": 7,
+    "variants": [
+      {
+        "label": "Shade",
+        "options": [
+          { "label": "Petal",  "hex": "#FFB3C6" },
+          { "label": "Coral",  "hex": "#FF6B6B" },
+          { "label": "Mauve",  "hex": "#C07BA0" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Lash Pop",
+    "category": "eyes",
+    "price": 50,
+    "desc": "Volumising mascara for bold, defined lashes",
+    "image": "",
+    "images": [],
+    "hot": false,
+    "stock": 9,
+    "variants": []
+  },
+  {
+    "id": 5,
+    "name": "Silk Liner",
+    "category": "eyes",
+    "price": 40,
+    "desc": "Precise felt-tip liner, smudge-proof all day",
+    "image": "",
+    "images": [],
+    "hot": false,
+    "stock": 15,
+    "variants": [
+      {
+        "label": "Colour",
+        "options": [
+          { "label": "Black", "hex": "#1a1a1a" },
+          { "label": "Brown", "hex": "#6B3A2A" },
+          { "label": "Pink",  "hex": "#E70C6A" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Curl Butter",
+    "category": "hair",
+    "price": 70,
+    "desc": "Define and moisturise curls without crunch",
+    "image": "",
+    "images": [],
+    "hot": false,
+    "stock": 2,
+    "variants": []
+  }
+]

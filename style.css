@@ -1,0 +1,1041 @@
+/* ── RESET & BASE ─────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --pink:   #E70C6A;
+  --purple: #C084FC;
+  --butter: #FFFACC;
+  --blush:  #FFD6EC;
+  --text:   #1a1a1a;
+  --nav-h:  56px;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  min-height: 100%;
+  overflow-x: hidden;
+  font-family: 'Nunito', sans-serif;
+  /* background is transparent — holo layer below shows through everything */
+  background: transparent;
+  position: relative;
+}
+
+/* ── HOLOGRAPHIC BACKGROUND — fixed, full viewport ── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background:
+    linear-gradient(135deg,
+      #f0d6ff 0%,
+      #ffd6ec 20%,
+      #c8f0ff 40%,
+      #fffacc 58%,
+      #ffd6f0 76%,
+      #d6eeff 90%,
+      #f0d6ff 100%);
+  background-size: 300% 300%;
+  animation: holoShift 12s ease infinite;
+  /* no max-width clamp — stretches full screen */
+  width: 100vw;
+  left: 0;
+}
+
+@keyframes holoShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ── POLKA DOTS — fixed, full viewport ────────── */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  left: 0;
+  z-index: -1;
+  background-image: radial-gradient(circle, rgba(231,12,106,0.18) 2.5px, transparent 2.5px);
+  background-size: 28px 28px;
+  animation: polkaScroll 9s linear infinite;
+  pointer-events: none;
+}
+
+/* polka dots drift toward top-right */
+@keyframes polkaScroll {
+  from { background-position: 0 0; }
+  to   { background-position: 56px -56px; }
+}
+
+/* ── NAV BAR — glass over holo background ─────── */
+.nav-bar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: var(--nav-h);
+  /* semi-transparent so holo bleeds through */
+  background: rgba(231, 12, 106, 0.82);
+  backdrop-filter: blur(14px) saturate(1.6);
+  -webkit-backdrop-filter: blur(14px) saturate(1.6);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  box-shadow: 0 2px 16px rgba(231,12,106,0.22);
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+.nav-logo-img {
+  height: 60px;
+  width: auto;
+  margin-left: -19px; /* Adjust this negative value to shift it left */
+  object-fit: contain;
+  display: block;
+}
+
+
+.nav-logo-text {
+  font-family: 'Pacifico', cursive;
+  font-size: 22px;
+  color: white;
+  line-height: 1;
+}
+
+.nav-icons {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.nav-icon-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.nav-cart-badge {
+  position: absolute;
+  top: -2px; right: -4px;
+  background: var(--butter);
+  color: var(--pink);
+  font-size: 9px;
+  font-weight: 800;
+  width: 16px; height: 16px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+}
+
+/* ── CAROUSEL ─────────────────────────────────── */
+.carousel-wrap {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel {
+  display: flex;
+  transition: transform 0.4s cubic-bezier(0.4,0,0.2,1);
+  will-change: transform;
+}
+
+.carousel-slide {
+  min-width: 100%;
+  position: relative;
+  aspect-ratio: 1.58 / 1;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.carousel-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.placeholder-img {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.placeholder-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: rgba(231,12,106,0.45);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* scrim — dark gradient at bottom so text always readable */
+.carousel-scrim {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 60%;
+  background: linear-gradient(to top, rgba(0,0,0,0.58) 0%, transparent 100%);
+  pointer-events: none;
+}
+
+.carousel-info {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 14px 16px 16px;
+}
+
+/* ── LIQUID GLASS on carousel name text ───────── */
+.liquid-glass {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  font-size: 26px;
+  color: white;
+  /* glass layer behind the text itself */
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(16px) saturate(2) brightness(1.1);
+  -webkit-backdrop-filter: blur(16px) saturate(2) brightness(1.1);
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 14px;
+  padding: 5px 14px 5px 12px;
+  /* inner highlight edge — the key detail that sells glass */
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.45),
+    inset 0 -1px 0 rgba(0,0,0,0.08),
+    0 4px 20px rgba(0,0,0,0.2);
+  line-height: 1.2;
+  max-width: 65%;
+  /* subtle pink glow on text */
+  text-shadow:
+    0 0 20px rgba(231,12,106,0.6),
+    0 1px 3px rgba(0,0,0,0.3);
+}
+
+.carousel-price {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--butter);
+  text-shadow: 0 1px 6px rgba(0,0,0,0.5);
+  align-self: flex-end;
+  padding-bottom: 4px;
+}
+
+/* carousel dots */
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  padding: 9px 0 5px;
+  /* glass strip behind dots */
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(6px);
+}
+
+.carousel-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: rgba(231,12,106,0.3);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.3s, transform 0.3s, width 0.3s;
+}
+
+.carousel-dot.active {
+  background: var(--pink);
+  transform: scale(1.25);
+  width: 18px;
+  border-radius: 4px;
+}
+
+/* ── PILLS — glass strip, sticky ─────────────── */
+.pills-wrap {
+  position: sticky;
+  top: var(--nav-h);
+  z-index: 90;
+  background: rgba(255,255,255,0.22);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  padding: 10px 16px;
+  border-bottom: 1px solid rgba(231,12,106,0.1);
+}
+
+.pills {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.pills::-webkit-scrollbar { display: none; }
+
+.pill {
+  flex-shrink: 0;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  padding: 7px 18px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+  border: 2px solid var(--pink);
+  background: transparent;
+  color: var(--pink);
+}
+
+.pill.active {
+  background: var(--butter);
+  border-color: transparent;
+  color: var(--pink);
+  box-shadow: 0 2px 8px rgba(231,12,106,0.2);
+}
+
+/* ── PRODUCT GRID ─────────────────────────────── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  padding: 14px 12px 100px;
+}
+
+/* ── PRODUCT TILE — glass cards over holo bg ──── */
+.tile {
+  background: rgba(255,255,255,0.55);
+  border-radius: 18px;
+  border: 1.5px solid rgba(255,255,255,0.6);
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  cursor: pointer;
+  transition: transform 0.18s, box-shadow 0.18s;
+  position: relative;
+  box-shadow: 0 2px 12px rgba(231,12,106,0.08);
+}
+
+.tile:active { transform: scale(0.97); }
+
+.tile-img-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+}
+
+.tile-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.tile-img-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 700;
+  color: rgba(231,12,106,0.35);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.low-stock {
+  position: absolute;
+  top: 8px; right: 8px;
+  background: rgba(231,12,106,0.88);
+  color: white;
+  font-size: 9px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 999px;
+  letter-spacing: 0.04em;
+}
+
+.tile-body {
+  padding: 10px 12px 14px;
+}
+
+.tile-name {
+  font-weight: 800;
+  font-size: 15px;
+  color: var(--pink);
+  line-height: 1.2;
+  margin-bottom: 3px;
+}
+
+.tile-desc {
+  font-size: 11px;
+  font-weight: 400;
+  color: rgba(0,0,0,0.38);
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.tile-price {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+/* ── HOT TILE — subtle pink glow, no fire ─────── */
+.hot-tile {
+  border: 1.5px solid rgba(231,12,106,0.4);
+  box-shadow: 0 0 14px rgba(231,12,106,0.2);
+}
+
+/* ── DETAIL PAGE ──────────────────────────────── */
+.detail-page {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  /* glass over holo */
+  background: rgba(255,245,251,0.88);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  overflow-y: auto;
+  transform: translateX(100%);
+  transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);
+}
+
+.detail-page.visible { transform: translateX(0); }
+.detail-page.hidden  { display: block !important; }
+
+.detail-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background: rgba(255,245,251,0.7);
+  backdrop-filter: blur(10px);
+}
+
+.detail-back, .detail-cart-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.cart-badge {
+  position: absolute;
+  top: 0; right: 0;
+  background: var(--pink);
+  color: white;
+  font-size: 9px;
+  font-weight: 700;
+  width: 16px; height: 16px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+}
+
+.detail-product-img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(231,12,106,0.3);
+  letter-spacing: 0.08em;
+}
+
+.detail-body { padding: 20px 20px 130px; }
+
+.detail-name {
+  font-weight: 800;
+  font-size: 26px;
+  color: var(--pink);
+  margin-bottom: 4px;
+}
+
+.detail-price {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.detail-desc {
+  font-size: 14px;
+  color: rgba(0,0,0,0.48);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.low-stock-warn {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--pink);
+  margin-bottom: 16px;
+}
+
+.variant-group { margin-bottom: 16px; }
+
+.variant-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(0,0,0,0.35);
+  margin-bottom: 8px;
+}
+
+.variant-options { display: flex; flex-wrap: wrap; gap: 8px; }
+
+.variant-opt {
+  font-family: 'Nunito', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 6px 16px;
+  border-radius: 999px;
+  border: 2px solid rgba(231,12,106,0.28);
+  background: transparent;
+  color: var(--pink);
+  cursor: pointer;
+  transition: all 0.18s;
+}
+
+.variant-opt.selected {
+  background: var(--pink);
+  color: white;
+  border-color: var(--pink);
+}
+
+/* ── COLOR VARIANT PILLS ──────────────────────── */
+/* pill has a color: show a swatch dot + tinted border */
+.variant-opt.has-color {
+  padding-left: 10px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.variant-opt.has-color::before {
+  content: '';
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: var(--opt-color);
+  border: 1.5px solid rgba(0,0,0,0.12);
+  flex-shrink: 0;
+}
+
+/* unselected: tint border to the swatch color */
+.variant-opt.has-color:not(.selected) {
+  border-color: var(--opt-color);
+  color: var(--text);
+}
+
+/* selected: fill with the swatch color */
+.variant-opt.has-color.selected {
+  background: var(--opt-color);
+  border-color: var(--opt-color);
+  color: white;
+  /* keep text readable on very light shades */
+  text-shadow: 0 1px 2px rgba(0,0,0,0.25);
+}
+
+.qty-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+  width: fit-content;
+}
+
+.qty-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(0,0,0,0.35);
+  margin-right: 14px;
+}
+
+.qty-btn {
+  width: 36px; height: 36px;
+  border-radius: 999px;
+  border: 2px solid var(--pink);
+  background: transparent;
+  color: var(--pink);
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.15s;
+}
+
+.qty-btn:active { background: var(--pink); color: white; }
+
+.qty-num {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--text);
+  width: 36px;
+  text-align: center;
+}
+
+.cta-row {
+  position: fixed;
+  bottom: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 100%; max-width: 480px;
+  display: flex;
+  gap: 10px;
+  padding: 14px 16px;
+  background: rgba(255,245,251,0.88);
+  backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(231,12,106,0.1);
+  z-index: 20;
+}
+
+.btn-add {
+  flex: 1;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  font-size: 14px;
+  padding: 14px 10px;
+  border-radius: 999px;
+  border: 2.5px solid var(--purple);
+  background: transparent;
+  color: var(--purple);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-order {
+  flex: 1.4;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  font-size: 14px;
+  padding: 14px 10px;
+  border-radius: 999px;
+  border: none;
+  background: var(--pink);
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+/* ── CART DRAWER ──────────────────────────────── */
+.cart-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.28);
+  z-index: 300;
+  backdrop-filter: blur(3px);
+}
+
+.cart-drawer {
+  position: fixed;
+  bottom: 0; left: 50%; transform: translateX(-50%);
+  width: 100%; max-width: 480px;
+  background: rgba(255,255,255,0.96);
+  border-radius: 24px 24px 0 0;
+  z-index: 301;
+  max-height: 75vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 -4px 30px rgba(0,0,0,0.12);
+}
+
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 20px 14px;
+  border-bottom: 1px solid rgba(0,0,0,0.07);
+}
+
+.cart-title {
+  font-family: 'Pacifico', cursive;
+  font-size: 20px;
+  color: var(--pink);
+}
+
+.cart-close {
+  background: none; border: none;
+  font-size: 18px; color: rgba(0,0,0,0.35);
+  cursor: pointer; padding: 4px;
+}
+
+.cart-items { overflow-y: auto; flex: 1; padding: 12px 20px; }
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+.cart-item-info { flex: 1; }
+.cart-item-name { font-weight: 700; font-size: 14px; color: var(--text); }
+.cart-item-variant { font-size: 11px; color: rgba(0,0,0,0.38); }
+.cart-item-price { font-weight: 700; font-size: 14px; color: var(--pink); }
+.cart-item-remove {
+  background: none; border: none;
+  color: rgba(0,0,0,0.22); font-size: 16px;
+  cursor: pointer; padding: 4px;
+}
+
+.cart-footer {
+  padding: 16px 20px 28px;
+  border-top: 1px solid rgba(0,0,0,0.07);
+}
+
+.cart-total-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.cart-total { color: var(--pink); font-size: 20px; }
+
+.whatsapp-btn {
+  width: 100%;
+  background: #25D366;
+  color: white;
+  border: none;
+  border-radius: 999px;
+  padding: 15px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  font-size: 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s;
+}
+.whatsapp-btn:active { opacity: 0.85; }
+
+/* ── UTILS ────────────────────────────────────── */
+.hidden { display: none !important; }
+
+/* ── MENU PAGE ─────────────────────────────────── */
+.menu-page {
+  position: fixed;
+  inset: 0;
+  z-index: 500;
+  background: var(--pink);
+  transform: translateX(100%);
+  transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-page.visible { transform: translateX(0); }
+.menu-page.hidden  { display: flex !important; }
+
+.menu-top-bar {
+  height: var(--nav-h);
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  flex-shrink: 0;
+}
+
+.menu-back {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+}
+
+.menu-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0;
+  gap: 0;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 22px 32px;
+  border-bottom: 3px solid white;
+  cursor: pointer;
+  text-decoration: none;
+  transition: opacity 0.15s;
+}
+
+.menu-item:first-child { border-top: 3px solid white; }
+.menu-item:active { opacity: 0.7; }
+
+.menu-icon {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.menu-label {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+  color: white;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.menu-footer {
+  padding: 28px 32px;
+  flex-shrink: 0;
+}
+
+.menu-tagline {
+  font-family: 'Pacifico', cursive;
+  font-size: 16px;
+  color: rgba(255,255,255,0.35);
+}
+
+/* ── PRODUCT IMAGE GALLERY ─────────────────────── */
+.gallery-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  background: #ffd6ec;
+}
+
+.gallery-track {
+  display: flex;
+  height: 100%;
+  transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);
+}
+
+.gallery-slide {
+  min-width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(231,12,106,0.3);
+  letter-spacing: 0.08em;
+  flex-shrink: 0;
+}
+
+.gallery-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.gallery-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.75);
+  backdrop-filter: blur(8px);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 5;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  transition: opacity 0.2s;
+}
+
+.gallery-btn:active { opacity: 0.7; }
+.gallery-btn-prev { left: 10px; }
+.gallery-btn-next { right: 10px; }
+
+.gallery-dots {
+  position: absolute;
+  bottom: 10px;
+  left: 0; right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+.gallery-dot {
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.5);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.gallery-dot.active {
+  background: white;
+  transform: scale(1.3);
+}
+
+/* ── SHARED SUB-PAGE (About & Contact) ────────── */
+.sub-page {
+  position: fixed;
+  inset: 0;
+  z-index: 500;
+  background: var(--pink);
+  transform: translateX(100%);
+  transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.sub-page.visible { transform: translateX(0); }
+/* keep display:flex so the slide-in works, same trick as menu-page */
+.sub-page.hidden  { display: flex !important; }
+
+.sub-top-bar {
+  height: var(--nav-h);
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  flex-shrink: 0;
+}
+
+.sub-back {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+}
+
+/* ── ABOUT PAGE ───────────────────────────────── */
+.about-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 48px 32px 64px;
+  text-align: center;
+}
+
+.about-logo-img {
+  width: 220px;
+  max-width: 70%;
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 36px;
+}
+
+.about-logo-text {
+  font-family: 'Pacifico', cursive;
+  font-size: 52px;
+  color: white;
+  line-height: 1.1;
+  margin-bottom: 36px;
+  /* same glow as carousel name */
+  text-shadow:
+    0 0 40px rgba(255,255,255,0.4),
+    0 2px 8px rgba(0,0,0,0.2);
+}
+
+.about-text {
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.88);
+  line-height: 1.7;
+  max-width: 340px;
+}
+
+/* ── CONTACT PAGE ─────────────────────────────── */
+.contact-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 32px 64px;
+  gap: 0;
+}
+
+.contact-title {
+  font-family: 'Pacifico', cursive;
+  font-size: 32px;
+  color: white;
+  margin-bottom: 32px;
+  padding-top: 8px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 22px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.35);
+  text-decoration: none;
+  transition: opacity 0.15s;
+}
+
+.contact-item:first-of-type { border-top: 1px solid rgba(255,255,255,0.35); }
+.contact-item:active { opacity: 0.7; }
+
+.contact-icon {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.contact-label {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+  color: white;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  flex: 1;
+}
+
+.contact-arrow {
+  display: flex;
+  align-items: center;
+  opacity: 0.6;
+}
