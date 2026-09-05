@@ -6,7 +6,7 @@
     "price": 45,
     "desc": "Sheer sparkle finish, long-lasting and non-sticky",
     "image": "hand.jfif",
-    "images": [],
+    "images": ["hand.jfif", "hands.jfif"],
     "hot": true,
     "stock": 3,
     "variants": [
