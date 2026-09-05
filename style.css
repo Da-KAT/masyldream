@@ -465,7 +465,7 @@ body::after {
   letter-spacing: 0.08em;
 }
 
-.detail-body { padding: 20px 20px 130px; }
+.detail-body { padding: 20px 20px 20px; }
 
 .detail-name {
   font-weight: 800;
@@ -602,17 +602,17 @@ body::after {
 }
 
 .cta-row {
-  position: fixed;
-  bottom: 0; left: 50%;
-  transform: translateX(-50%);
-  width: 100%; max-width: 480px;
+  position: sticky;
+  bottom: 0;
+  width: 100%;
   display: flex;
   gap: 10px;
   padding: 14px 16px;
-  background: rgba(255,245,251,0.88);
+  background: rgba(255,245,251,0.95);
   backdrop-filter: blur(12px);
   border-top: 1px solid rgba(231,12,106,0.1);
   z-index: 20;
+  margin-top: auto;
 }
 
 .btn-add {
