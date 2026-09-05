@@ -1,11 +1,11 @@
 [
   {
     "id": 1,
-    "name": "Glitter Gloss",
-    "category": "lips",
+    "name": "Exfoliating glove",
+    "category": "skin",
     "price": 45,
     "desc": "Sheer sparkle finish, long-lasting and non-sticky",
-    "image": "",
+    "image": "hand.jfif",
     "images": [],
     "hot": true,
     "stock": 3,
