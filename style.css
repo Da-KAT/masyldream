@@ -37,13 +37,13 @@ body::before {
   z-index: -2;
   background:
     linear-gradient(135deg,
-      #f0d6ff 0%,
-      #ffd6ec 20%,
-      #c8f0ff 40%,
-      #fffacc 58%,
-      #ffd6f0 76%,
-      #d6eeff 90%,
-      #f0d6ff 100%);
+      #d9a8ff 0%,
+      #ff9fd4 20%,
+      #8fd8f8 40%,
+      #fff099 58%,
+      #ffaadd 76%,
+      #a8d4ff 90%,
+      #d9a8ff 100%);
   background-size: 300% 300%;
   animation: holoShift 12s ease infinite;
   /* no max-width clamp — stretches full screen */
@@ -348,7 +348,7 @@ body::after {
   display: block;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  
+  mix-blend-mode: multiply;
 }
 
 
