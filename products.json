@@ -231,8 +231,8 @@
     "category": "tools",
     "price": 50,
     "desc": "Stylish summer handheld fan perfect for hot sunny days.",
-    "image": "",
-    "images": [],
+    "image": "sumfan.jpg",
+    "images": ["sumfan.jpg", "sumfan2.jpg"],
     "hot": false,
     "stock": 10,
     "variants": []
@@ -294,7 +294,7 @@
     "image": "219.jpg",
     "images": [],
     "hot": false,
-    "stock": 10,
+    "stock": 1,
     "variants": []
   },
   {
@@ -306,7 +306,7 @@
     "image": "244.jpg",
     "images": [],
     "hot": false,
-    "stock": 10,
+    "stock": 1,
     "variants": []
   },
   {
@@ -318,7 +318,7 @@
     "image": "243.jpg",
     "images": [],
     "hot": false,
-    "stock": 10,
+    "stock": 1,
     "variants": []
   },
   {
@@ -330,7 +330,7 @@
     "image": "176.jpg",
     "images": [],
     "hot": false,
-    "stock": 10,
+    "stock": 1,
     "variants": []
   },
   {
@@ -339,10 +339,10 @@
     "category": "fragrance",
     "price": 30,
     "desc": "Charming daily fragrance with light floral and sweet notes.",
-    "image": "203.jpg",
+    "image": "203.jpg",                             
     "images": [],
     "hot": false,
-    "stock": 10,
+    "stock": 1,
     "variants": []
   },
   {
@@ -354,7 +354,7 @@
     "image": "rams.jpg",
     "images": [],
     "hot": false,
-    "stock": 10,
+    "stock": 1,
     "variants": []
   },
   {
@@ -366,7 +366,7 @@
     "image": "hero.jfif",
     "images": [],
     "hot": false,
-    "stock": 10,
+    "stock": 1,
     "variants": []
   },
   {
@@ -378,7 +378,7 @@
     "image": "roro.jpg",
     "images": [],
     "hot": false,
-    "stock": 10,
+    "stock": 1 ,
     "variants": []
   },
   {
