@@ -1,7 +1,10 @@
 /* ── RESET & BASE ─────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+  
+
 :root {
+  color-scheme: light only;
   --pink:   #E70C6A;
   --purple: #C084FC;
   --butter: #FFFACC;
@@ -335,15 +338,19 @@ body::after {
   width: 100%;
   aspect-ratio: 1/1;
   overflow: hidden;
+  background: #FFD6EC; /* pink fallback while image loads */
 }
 
 .tile-img {
-width: 100%;
+  width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
-  mix-blend-mode: multiply;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  
 }
+
 
 .tile-img-placeholder {
   width: 100%;

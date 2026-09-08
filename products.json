@@ -8,7 +8,7 @@
     "image": "dua.jpg",
     "images": [],
     "hot": false,
-    "stock": 10,
+    "stock": 6,
     "variants": []
   },
   {
@@ -26,23 +26,7 @@
     "hot": true,
     "stock": 5,
     "variants": [
-      {
-        "label": "Shade",
-        "options": [
-          {
-            "label": "Pink Fizz",
-            "hex": "#FF87BE"
-          },
-          {
-            "label": "Berry Pop",
-            "hex": "#8B2B6B"
-          },
-          {
-            "label": "Clear",
-            "hex": "#D6F0FF"
-          }
-        ]
-      }
+
     ]
   },
   {
@@ -54,7 +38,7 @@
     "image": "pinky.jfif",
     "images": [],
     "hot": false,
-    "stock": 10,
+    "stock": 6,
     "variants": []
   },
   {
@@ -66,7 +50,7 @@
     "image": "brush.jpg",
     "images": [],
     "hot": false,
-    "stock": 10,
+    "stock": 12,
     "variants": []
   },
   {
@@ -78,7 +62,7 @@
     "image": "5n1.jpg",
     "images": [],
     "hot": false,
-    "stock": 10,
+    "stock": 3,
     "variants": []
   },
   {
@@ -90,7 +74,7 @@
     "image": "catlash.jfif",
     "images": [],
     "hot": false,
-    "stock": 10,
+    "stock": 6,
     "variants": []
   },
   {
@@ -102,7 +86,7 @@
     "image": "aba.jfif",
     "images": [],
     "hot": false,
-    "stock": 10,
+    "stock": 2,
     "variants": []
   },
   {
@@ -114,31 +98,31 @@
     "image": "pincase2.jpg",
     "images": [],
     "hot": false,
-    "stock": 10,
+    "stock": 2,
     "variants": []
   },
   {
     "id": 9,
     "name": "DIY lash",
     "category": "eyes",
-    "price": 65,
-    "desc": "Customizable lash clusters for an easy at-home lash extension look.",
+    "price": 60,
+    "desc": "Customizable DIY lash kit for creating your own unique lash styles.",
     "image": "dilash.jfif",
     "images": [],
     "hot": false,
-    "stock": 10,
+    "stock": 3,
     "variants": []
   },
   {
     "id": 26,
     "name": "Cluster lashes",
     "category": "eyes",
-    "price": 65,
+    "price": 45,
     "desc": "Customizable lash clusters for an easy at-home lash extension look.",
     "image": "clash.jfif",
     "images": [],
     "hot": false,
-    "stock": 10,
+    "stock": 2,
     "variants": []
   },
   {
@@ -150,8 +134,10 @@
     "image": "fruitbam.jfif",
     "images": [],
     "hot": false,
-    "stock": 10,
-    "variants": []
+    "stock": 24,
+    "variants": [
+     
+    ]
   },
   {
     "id": 11,
@@ -161,13 +147,13 @@
     "desc": "Smooth hydrating lip gloss for everyday glossy shine.",
     "image": "cute.jfif",
     "images": ["cute.jfif", "cut.jfif"],
-    "hot": false,
-    "stock": 10,
+    "hot": true,
+    "stock": 12,
     "variants": []
   },
   {
     "id": 12,
-    "name": "Magic balm",
+    "name": "Bear lip balm",
     "category": "lips",
     "price": 15,
     "desc": "Nourishing lip balm that adapts to your natural lip tone.",
@@ -186,7 +172,7 @@
     "image": "2n1.jfif",
     "images": [],
     "hot": false,
-    "stock": 10,
+    "stock": 12,
     "variants": []
   },
   {
@@ -198,7 +184,7 @@
     "image": "handle.jfif",
     "images": [],
     "hot": false,
-    "stock": 10,
+    "stock": 3,
     "variants": []
   },
   {
@@ -210,7 +196,7 @@
     "image": "mfp.jfif",
     "images": [],
     "hot": false,
-    "stock": 10,
+    "stock": 5,
     "variants": []
   },
   {
@@ -222,7 +208,7 @@
     "image": "ongfan.jpg",
     "images": [],
     "hot": false,
-    "stock": 10,
+    "stock": 5,
     "variants": []
   },
   {
@@ -234,7 +220,7 @@
     "image": "sumfan.jpg",
     "images": ["sumfan.jpg", "sumfan2.jpg"],
     "hot": false,
-    "stock": 10,
+    "stock": 2,
     "variants": []
   },
   {
@@ -246,8 +232,38 @@
     "image": "rmay.jfif",
     "images": [],
     "hot": false,
-    "stock": 10,
-    "variants": []
+    "stock": 6,
+    "variants": [
+      {
+        "label": "Shade",
+        "options": [
+          {
+            "label": "Berry",
+            "hex": "#94005e"
+          },
+          {
+            "label": "Ruby",
+            "hex": "#8b0f11"
+          },
+          {
+            "label": "Terracotta",
+            "hex": "#b46233"
+          },
+          {
+            "label": "Navy",
+            "hex": "#22367b"
+          },
+          {
+            "label": "Gold",
+            "hex": "#bdac50"
+          },
+          {
+            "label": "Cobalt",
+            "hex": "#0140b1"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 19,
@@ -258,7 +274,7 @@
     "image": "IMAN.jpg",
     "images": [],
     "hot": false,
-    "stock": 10,
+    "stock": 12,
     "variants": []
   },
   {
@@ -270,8 +286,62 @@
     "image": "ABSOL.jfif",
     "images": [],
     "hot": false,
-    "stock": 10,
-    "variants": []
+    "stock": 12,
+    "variants": [
+      {
+        "label": "Shade",
+        "options": [
+          {
+            "label": "Tangerine",
+            "hex": "#f48c4a"
+          },
+          {
+            "label": "Raspberry",
+            "hex": "#da2952"
+          },
+          {
+            "label": "Crimson",
+            "hex": "#bf0024"
+          },
+          {
+            "label": "Hot Pink",
+            "hex": "#fa34a5"
+          },
+          {
+            "label": "Mulberry",
+            "hex": "#903c78"
+          },
+          {
+            "label": "Rose",
+            "hex": "#cb4752"
+          },
+          {
+            "label": "Burgundy",
+            "hex": "#981e35"
+          },
+          {
+            "label": "Brick Red",
+            "hex": "#ac1621"
+          },
+          {
+            "label": "Cranberry",
+            "hex": "#aa212f"
+          },
+          {
+            "label": "Coral",
+            "hex": "#e24e3b"
+          },
+          {
+            "label": "Garnet",
+            "hex": "#8c323e"
+          },
+          {
+            "label": "Watermelon",
+            "hex": "#f6417c"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 21,
@@ -390,7 +460,7 @@
     "image": "hcream.jpg",
     "images": [],
     "hot": false,
-    "stock": 3,
+    "stock": 12,
     "variants": [{
         "label": "Fruit",
         "options": [
@@ -411,86 +481,62 @@
   },
   {
     "id": 32,
-    "name": "Placeholder product 1",
-    "category": "placeholder",
-    "price": 0,
-    "desc": "Placeholder product description.",
-    "image": "placeholder.jpg",
+    "name": "2 in 1 Shampoo & Conditioner",
+    "category": "hair",
+    "price": 55,
+    "desc": "Convenient 2-in-1 shampoo and conditioner for a quick and easy hair care routine.",
+    "image": "2in1.jpg",
     "images": [],
     "hot": false,
-    "stock": 0,
+    "stock": 3,
     "variants": []
   },
   {
     "id": 33,
-    "name": "Placeholder product 2",
-    "category": "placeholder",
-    "price": 0,
-    "desc": "Placeholder product description.",
-    "image": "placeholder.jpg",
+    "name": "Olive Expert S&C Set",
+    "category": "hair",
+    "price": 100,
+    "desc": "Premium shampoo and conditioner set for deeply nourished and manageable hair.",
+    "image": "olive.jpg",
     "images": [],
-    "hot": false,
-    "stock": 0,
+    "hot": true,
+    "stock": 1,
     "variants": []
   },
   {
     "id": 34,
-    "name": "Placeholder product 3",
-    "category": "placeholder",
-    "price": 0,
-    "desc": "Placeholder product description.",
-    "image": "placeholder.jpg",
+    "name": "Olive Marvel S&C Set",
+    "category": "hair",
+    "price": 85,
+    "desc": "Luxurious shampoo and conditioner set for intensely hydrated and styled hair.",
+    "image": "oma.jpg",
     "images": [],
     "hot": false,
-    "stock": 0,
+    "stock": 1,
     "variants": []
   },
   {
     "id": 35,
-    "name": "Placeholder product 4",
-    "category": "placeholder",
-    "price": 0,
-    "desc": "Placeholder product description.",
-    "image": "placeholder.jpg",
+    "name": "Roushun Lavender S&C",
+    "category": "hair",
+    "price": 45,
+    "desc": "Gentle shampoo and conditioner set infused with soothing lavender for a calming hair care experience.",
+    "image": "roushun.jpg",
     "images": [],
-    "hot": false,
-    "stock": 0,
+    "hot": true,
+    "stock": 1,
     "variants": []
   },
   {
     "id": 36,
-    "name": "Placeholder product 5",
-    "category": "placeholder",
-    "price": 0,
-    "desc": "Placeholder product description.",
-    "image": "placeholder.jpg",
+    "name": "Roushun Olive S&C",
+    "category": "hair",
+    "price": 50,
+    "desc": "Gentle shampoo and conditioner set infused with nourishing olive oil for a luxurious hair care experience.",
+    "image": "roro (3).jpg",
     "images": [],
     "hot": false,
-    "stock": 0,
-    "variants": []
-  },
-  {
-    "id": 37,
-    "name": "Placeholder product 6",
-    "category": "placeholder",
-    "price": 0,
-    "desc": "Placeholder product description.",
-    "image": "placeholder.jpg",
-    "images": [],
-    "hot": false,
-    "stock": 0,
-    "variants": []
-  },
-  {
-    "id": 38,
-    "name": "Placeholder product 7",
-    "category": "placeholder",
-    "price": 0,
-    "desc": "Placeholder product description.",
-    "image": "placeholder.jpg",
-    "images": [],
-    "hot": false,
-    "stock": 0,
+    "stock": 2,
     "variants": []
   }
 ]
