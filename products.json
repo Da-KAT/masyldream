@@ -17,10 +17,11 @@
     "category": "skin",
     "price": 20,
     "desc": "Exfoliating gloves to gently lift away dead skin cells for smoother skin.",
-    "image": "hand.jfif",
+    "image": "hand3.jfif",
     "images": [
       "hand.jfif",
-      "hands.jfif"
+      "hands.jfif",
+      "hand3.jfif"
     ],
     "hot": true,
     "stock": 5,
