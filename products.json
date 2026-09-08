@@ -1,101 +1,323 @@
 [
   {
     "id": 1,
-    "name": "Exfoliating glove",
+    "name": "Dual face",
     "category": "skin",
-    "price": 45,
-    "desc": "Sheer sparkle finish, long-lasting and non-sticky",
-    "image": "hand.jfif",
-    "images": ["hand.jfif", "hands.jfif"],
-    "hot": true,
-    "stock": 3,
-    "variants": [
-      {
-        "label": "Shade",
-        "options": [
-          { "label": "Pink Fizz", "hex": "#FF87BE" },
-          { "label": "Berry Pop", "hex": "#8B2B6B" },
-          { "label": "Clear",     "hex": "#D6F0FF" }
-        ]
-      }
-    ]
-  },
-  {
-    "id": 2,
-    "name": "Dream Serum",
-    "category": "skin",
-    "price": 85,
-    "desc": "Lightweight hydrating glow boost for all skin types",
+    "price": 25,
+    "desc": "Double-sided facial tool for gentle cleansing and exfoliation.",
     "image": "",
     "images": [],
     "hot": false,
-    "stock": 12,
+    "stock": 10,
     "variants": []
   },
   {
-    "id": 3,
-    "name": "Cloud Blush",
+    "id": 2,
+    "name": "Sponge gloves",
     "category": "skin",
-    "price": 60,
-    "desc": "Buildable soft rosy flush, blends like a dream",
-    "image": "",
-    "images": [],
-    "hot": false,
-    "stock": 7,
+    "price": 20,
+    "desc": "Exfoliating gloves to gently lift away dead skin cells for smoother skin.",
+    "image": "hand.jfif",
+    "images": [
+      "hand.jfif",
+      "hands.jfif"
+    ],
+    "hot": true,
+    "stock": 5,
     "variants": [
       {
         "label": "Shade",
         "options": [
-          { "label": "Petal",  "hex": "#FFB3C6" },
-          { "label": "Coral",  "hex": "#FF6B6B" },
-          { "label": "Mauve",  "hex": "#C07BA0" }
+          {
+            "label": "Pink Fizz",
+            "hex": "#FF87BE"
+          },
+          {
+            "label": "Berry Pop",
+            "hex": "#8B2B6B"
+          },
+          {
+            "label": "Clear",
+            "hex": "#D6F0FF"
+          }
         ]
       }
     ]
   },
   {
-    "id": 4,
-    "name": "Lash Pop",
-    "category": "eyes",
+    "id": 3,
+    "name": "Pinkey facial set",
+    "category": "skin",
     "price": 50,
-    "desc": "Volumising mascara for bold, defined lashes",
+    "desc": "Complete facial care set designed to refresh and revitalize your skin.",
     "image": "",
     "images": [],
     "hot": false,
-    "stock": 9,
+    "stock": 10,
+    "variants": []
+  },
+  {
+    "id": 4,
+    "name": "Face brush single",
+    "category": "skin",
+    "price": 20,
+    "desc": "Soft-bristled single facial brush for deep daily cleansing.",
+    "image": "",
+    "images": [],
+    "hot": false,
+    "stock": 10,
     "variants": []
   },
   {
     "id": 5,
-    "name": "Silk Liner",
-    "category": "eyes",
+    "name": "5in1 set",
+    "category": "skin",
     "price": 40,
-    "desc": "Precise felt-tip liner, smudge-proof all day",
+    "desc": "Versatile 5-in-1 skincare kit for a complete pampering routine.",
     "image": "",
     "images": [],
     "hot": false,
-    "stock": 15,
-    "variants": [
-      {
-        "label": "Colour",
-        "options": [
-          { "label": "Black", "hex": "#1a1a1a" },
-          { "label": "Brown", "hex": "#6B3A2A" },
-          { "label": "Pink",  "hex": "#E70C6A" }
-        ]
-      }
-    ]
+    "stock": 10,
+    "variants": []
   },
   {
     "id": 6,
-    "name": "Curl Butter",
-    "category": "hair",
-    "price": 70,
-    "desc": "Define and moisturise curls without crunch",
+    "name": "Cat eye lash",
+    "category": "eyes",
+    "price": 45,
+    "desc": "Flirty cat-eye eyelashes to elevate your dramatic eye look.",
     "image": "",
     "images": [],
     "hot": false,
-    "stock": 2,
+    "stock": 10,
+    "variants": []
+  },
+  {
+    "id": 7,
+    "name": "Fashion Aba lash",
+    "category": "eyes",
+    "price": 65,
+    "desc": "Stylish high-volume lashes for a bold and fashionable statement.",
+    "image": "",
+    "images": [],
+    "hot": false,
+    "stock": 10,
+    "variants": []
+  },
+  {
+    "id": 8,
+    "name": "Lash pink case",
+    "category": "eyes",
+    "price": 65,
+    "desc": "Premium lashes packaged in a sleek pink protective case.",
+    "image": "",
+    "images": [],
+    "hot": false,
+    "stock": 10,
+    "variants": []
+  },
+  {
+    "id": 9,
+    "name": "DIY lash",
+    "category": "eyes",
+    "price": 65,
+    "desc": "Customizable lash clusters for an easy at-home lash extension look.",
+    "image": "",
+    "images": [],
+    "hot": false,
+    "stock": 10,
+    "variants": []
+  },
+  {
+    "id": 10,
+    "name": "Fruity lip gloss",
+    "category": "lips",
+    "price": 10,
+    "desc": "Juicy fruity lip gloss delivering high shine and sweet moisture.",
+    "image": "",
+    "images": [],
+    "hot": false,
+    "stock": 10,
+    "variants": []
+  },
+  {
+    "id": 11,
+    "name": "Lip gloss (AA)",
+    "category": "lips",
+    "price": 10,
+    "desc": "Smooth hydrating lip gloss for everyday glossy shine.",
+    "image": "",
+    "images": [],
+    "hot": false,
+    "stock": 10,
+    "variants": []
+  },
+  {
+    "id": 12,
+    "name": "Magic balm",
+    "category": "lips",
+    "price": 15,
+    "desc": "Nourishing lip balm that adapts to your natural lip tone.",
+    "image": "",
+    "images": [],
+    "hot": false,
+    "stock": 10,
+    "variants": []
+  },
+  {
+    "id": 13,
+    "name": "Lip gloss 2in1",
+    "category": "lips",
+    "price": 20,
+    "desc": "Dual-ended lip gloss pairing two complementary shiny shades.",
+    "image": "",
+    "images": [],
+    "hot": false,
+    "stock": 10,
+    "variants": []
+  },
+  {
+    "id": 14,
+    "name": "Mini fan with handle",
+    "category": "tools",
+    "price": 40,
+    "desc": "Portable handheld mini fan to keep you cool anywhere.",
+    "image": "",
+    "images": [],
+    "hot": false,
+    "stock": 10,
+    "variants": []
+  },
+  {
+    "id": 15,
+    "name": "Mini fan purple",
+    "category": "tools",
+    "price": 40,
+    "desc": "Compact purple mini fan for a quick refreshing breeze.",
+    "image": "",
+    "images": [],
+    "hot": false,
+    "stock": 10,
+    "variants": []
+  },
+  {
+    "id": 16,
+    "name": "Mini fan orange",
+    "category": "tools",
+    "price": 35,
+    "desc": "Vibrant orange portable fan ideal for on-the-go cooling.",
+    "image": "",
+    "images": [],
+    "hot": false,
+    "stock": 10,
+    "variants": []
+  },
+  {
+    "id": 17,
+    "name": "Summer hand held",
+    "category": "tools",
+    "price": 50,
+    "desc": "Stylish summer handheld fan perfect for hot sunny days.",
+    "image": "",
+    "images": [],
+    "hot": false,
+    "stock": 10,
+    "variants": []
+  },
+  {
+    "id": 18,
+    "name": "Romantic may lipgloss",
+    "category": "lips",
+    "price": 5,
+    "desc": "Budget-friendly glossy balm for a soft rosy tint.",
+    "image": "",
+    "images": [],
+    "hot": false,
+    "stock": 10,
+    "variants": []
+  },
+  {
+    "id": 19,
+    "name": "Iman lip gloss",
+    "category": "lips",
+    "price": 5,
+    "desc": "Lightweight shiny lip gloss for a natural hint of color.",
+    "image": "",
+    "images": [],
+    "hot": false,
+    "stock": 10,
+    "variants": []
+  },
+  {
+    "id": 20,
+    "name": "Absolute lip",
+    "category": "lips",
+    "price": 5,
+    "desc": "Essential lip gloss giving your lips a hydrated shine.",
+    "image": "",
+    "images": [],
+    "hot": false,
+    "stock": 10,
+    "variants": []
+  },
+  {
+    "id": 21,
+    "name": "Only you perfume",
+    "category": "fragrance",
+    "price": 30,
+    "desc": "Charming daily fragrance with light floral and sweet notes.",
+    "image": "",
+    "images": [],
+    "hot": false,
+    "stock": 10,
+    "variants": []
+  },
+  {
+    "id": 22,
+    "name": "Ramz perfume",
+    "category": "fragrance",
+    "price": 30,
+    "desc": "Rich captivating perfume with deep alluring scents.",
+    "image": "",
+    "images": [],
+    "hot": false,
+    "stock": 10,
+    "variants": []
+  },
+  {
+    "id": 23,
+    "name": "Hero perfume",
+    "category": "fragrance",
+    "price": 50,
+    "desc": "Bold and long-lasting premium scent for any occasion.",
+    "image": "",
+    "images": [],
+    "hot": false,
+    "stock": 10,
+    "variants": []
+  },
+  {
+    "id": 24,
+    "name": "Red rose perfume",
+    "category": "fragrance",
+    "price": 35,
+    "desc": "Romantic floral fragrance infused with the classic scent of fresh roses.",
+    "image": "",
+    "images": [],
+    "hot": false,
+    "stock": 10,
+    "variants": []
+  },
+  {
+    "id": 25,
+    "name": "Hand cream",
+    "category": "skin",
+    "price": 15,
+    "desc": "Rich moisturizing hand cream to soften and soothe dry hands.",
+    "image": "",
+    "images": [],
+    "hot": false,
+    "stock": 10,
     "variants": []
   }
 ]
