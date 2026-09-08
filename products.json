@@ -159,8 +159,8 @@
     "category": "lips",
     "price": 15,
     "desc": "Nourishing lip balm that adapts to your natural lip tone.",
-    "image": "mlipbalm.jfif",
-    "images": ["mlipbalm.jfif", "mlipbalms.jfif"],
+    "image": "mlipbam.jfif",
+    "images": ["mlipbam.jfif", "mlipbalms.jfif"],
     "hot": false,
     "stock": 10,
     "variants": []
