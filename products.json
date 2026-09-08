@@ -5,7 +5,7 @@
     "category": "skin",
     "price": 25,
     "desc": "Double-sided facial tool for gentle cleansing and exfoliation.",
-    "image": "",
+    "image": "dua.jpg",
     "images": [],
     "hot": false,
     "stock": 10,
@@ -63,7 +63,7 @@
     "category": "skin",
     "price": 20,
     "desc": "Soft-bristled single facial brush for deep daily cleansing.",
-    "image": "",
+    "image": "brush.jpg",
     "images": [],
     "hot": false,
     "stock": 10,
@@ -75,7 +75,7 @@
     "category": "skin",
     "price": 40,
     "desc": "Versatile 5-in-1 skincare kit for a complete pampering routine.",
-    "image": "",
+    "image": "5n1.jpg",
     "images": [],
     "hot": false,
     "stock": 10,
@@ -387,10 +387,110 @@
     "category": "skin",
     "price": 15,
     "desc": "Rich moisturizing hand cream to soften and soothe dry hands.",
-    "image": "",
+    "image": "hcream.jpg",
     "images": [],
     "hot": false,
-    "stock": 10,
+    "stock": 3,
+    "variants": [{
+        "label": "Fruit",
+        "options": [
+          {
+            "label": "Kiwi",
+            "hex": "#88b54f"
+          },
+          {
+            "label": "Watermelon",
+            "hex": "#db392a"
+          },
+          {
+            "label": "Cucumber",
+            "hex": "#577640"
+          }
+        ]
+      }]
+  },
+  {
+    "id": 32,
+    "name": "Placeholder product 1",
+    "category": "placeholder",
+    "price": 0,
+    "desc": "Placeholder product description.",
+    "image": "placeholder.jpg",
+    "images": [],
+    "hot": false,
+    "stock": 0,
+    "variants": []
+  },
+  {
+    "id": 33,
+    "name": "Placeholder product 2",
+    "category": "placeholder",
+    "price": 0,
+    "desc": "Placeholder product description.",
+    "image": "placeholder.jpg",
+    "images": [],
+    "hot": false,
+    "stock": 0,
+    "variants": []
+  },
+  {
+    "id": 34,
+    "name": "Placeholder product 3",
+    "category": "placeholder",
+    "price": 0,
+    "desc": "Placeholder product description.",
+    "image": "placeholder.jpg",
+    "images": [],
+    "hot": false,
+    "stock": 0,
+    "variants": []
+  },
+  {
+    "id": 35,
+    "name": "Placeholder product 4",
+    "category": "placeholder",
+    "price": 0,
+    "desc": "Placeholder product description.",
+    "image": "placeholder.jpg",
+    "images": [],
+    "hot": false,
+    "stock": 0,
+    "variants": []
+  },
+  {
+    "id": 36,
+    "name": "Placeholder product 5",
+    "category": "placeholder",
+    "price": 0,
+    "desc": "Placeholder product description.",
+    "image": "placeholder.jpg",
+    "images": [],
+    "hot": false,
+    "stock": 0,
+    "variants": []
+  },
+  {
+    "id": 37,
+    "name": "Placeholder product 6",
+    "category": "placeholder",
+    "price": 0,
+    "desc": "Placeholder product description.",
+    "image": "placeholder.jpg",
+    "images": [],
+    "hot": false,
+    "stock": 0,
+    "variants": []
+  },
+  {
+    "id": 38,
+    "name": "Placeholder product 7",
+    "category": "placeholder",
+    "price": 0,
+    "desc": "Placeholder product description.",
+    "image": "placeholder.jpg",
+    "images": [],
+    "hot": false,
+    "stock": 0,
     "variants": []
   }
 ]
