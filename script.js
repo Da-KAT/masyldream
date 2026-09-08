@@ -1,5 +1,5 @@
 /* ── CONFIG ───────────────────────────────────── */
-const WHATSAPP_NUMBER = '233XXXXXXXXX'; // ← Masyl's real number
+const WHATSAPP_NUMBER = '233248064182'; // ← Masyl's real number
 
 /*
   SHEETDB SETUP (Option B — live stock tracking):
