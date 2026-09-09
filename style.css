@@ -849,27 +849,28 @@ body::after {
   display: flex;
   height: 100%;
   transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);
+  will-change: transform;
+  -webkit-overflow-scrolling: touch;
 }
 
 .gallery-slide {
   min-width: 100%;
+  width: 100%;
   height: 100%;
-  object-fit: cover;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 13px;
-  font-weight: 700;
-  color: rgba(231,12,106,0.3);
-  letter-spacing: 0.08em;
   flex-shrink: 0;
+  overflow: hidden;
+  position: relative;
 }
 
 .gallery-slide img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
+  object-position: center;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 .gallery-btn {
