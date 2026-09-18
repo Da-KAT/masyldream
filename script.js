@@ -1,17 +1,6 @@
 /* ── CONFIG ───────────────────────────────────── */
 const WHATSAPP_NUMBER = '233248064182'; // ← Masyl's real number
 
-/*
-  SHEETDB SETUP (Option B — live stock tracking):
-  1. Go to sheetdb.io → create free account
-  2. Connect your Google Sheet (columns: id, name, category, price,
-     desc, image, images, hot, stock, variants)
-  3. Copy your API URL and paste it below
-  4. Set USE_SHEETDB = true
-
-  While USE_SHEETDB is false, the site reads from products.json
-  and stock updates are manual (edit products.json after each order).
-*/
 const USE_SHEETDB = false;
 const SHEETDB_URL = 'https://sheetdb.io/api/v1/YOUR_KEY_HERE';
 
@@ -276,17 +265,29 @@ function openDetail(product) {
       ? `<p class="low-stock-warn">⚠ Only ${product.stock} left in stock</p>`
       : '';
 
+  // ── FIX: render opt.label (string) not opt (object) ──────────────────
   const variantsHTML = product.variants.map(v => `
     <div class="variant-group">
       <div class="variant-label">${v.label}</div>
       <div class="variant-options">
-        ${v.options.map((opt, i) => `
-          <button class="variant-opt ${i===0?'selected':''}"
-            onclick="selectVariant(this)">${opt}</button>
-        `).join('')}
+        ${v.options.map((opt, i) => {
+          const hasColor = opt.hex && opt.hex !== '';
+          const style = hasColor
+            ? `background:${opt.hex};border-color:${opt.hex};color:#fff;`
+            : '';
+          return `<button
+            class="variant-opt ${i === 0 ? 'selected' : ''}"
+            data-label="${opt.label}"
+            data-hex="${opt.hex || ''}"
+            onclick="selectVariant(this)"
+            style="${style}"
+            title="${opt.label}"
+          >${hasColor ? '' : opt.label}</button>`;
+        }).join('')}
       </div>
     </div>
   `).join('');
+  // ─────────────────────────────────────────────────────────────────────
 
   content.innerHTML = `
     <div class="gallery-wrap" id="galleryWrap">
@@ -323,12 +324,10 @@ function openDetail(product) {
   updateDetailCartBadge();
   page.classList.remove('hidden');
   requestAnimationFrame(() => page.classList.add('visible'));
-  history.pushState({ detail: true }, ''); // ← intercepts the back button
+  history.pushState({ detail: true }, '');
   clearInterval(carouselTimer);
 }
 
-/* two versions of close — one that pushes history, one that doesn't
-   (popstate handler calls the no-history version to avoid double-pop) */
 function closeDetail() {
   closeDetailNoHistory();
 }
@@ -362,11 +361,12 @@ function selectVariant(btn) {
   btn.classList.add('selected');
 }
 
+// ── FIX: read data-label instead of textContent (avoids whitespace issues)
 function getSelectedVariants() {
   return [...document.querySelectorAll('.variant-group')].map(g => {
-    const label = g.querySelector('.variant-label').textContent;
+    const label = g.querySelector('.variant-label').textContent.trim();
     const sel   = g.querySelector('.variant-opt.selected');
-    return sel ? `${label}: ${sel.textContent}` : null;
+    return sel ? `${label}: ${sel.dataset.label}` : null;
   }).filter(Boolean);
 }
 
@@ -522,4 +522,19 @@ function closeMenuNoHistory() {
   const menu = document.getElementById('menuPage');
   menu.classList.remove('visible');
   setTimeout(() => menu.classList.add('hidden'), 350);
+}
+
+/* ── ABOUT / CONTACT ──────────────────────────── */
+function openAbout() {
+  const page = document.getElementById('aboutPage');
+  page.classList.remove('hidden');
+  requestAnimationFrame(() => page.classList.add('visible'));
+  history.pushState({ about: true }, '');
+}
+
+function openContact() {
+  const page = document.getElementById('contactPage');
+  page.classList.remove('hidden');
+  requestAnimationFrame(() => page.classList.add('visible'));
+  history.pushState({ contact: true }, '');
 }
