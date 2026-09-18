@@ -515,8 +515,6 @@ body::after {
   margin-bottom: 8px;
 }
 
-.variant-options { display: flex; flex-wrap: wrap; gap: 8px; }
-
 .variant-opt {
   font-family: 'Nunito', sans-serif;
   font-size: 13px;
@@ -529,7 +527,19 @@ body::after {
   cursor: pointer;
   transition: all 0.18s;
 }
+.variant-swatch {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1px solid rgba(0,0,0,0.15);
+  flex-shrink: 0;
+}
 
+.variant-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
 .variant-opt.selected {
   background: var(--pink);
   color: white;

@@ -280,9 +280,10 @@ function openDetail(product) {
             data-label="${opt.label}"
             data-hex="${opt.hex || ''}"
             onclick="selectVariant(this)"
-            style="${style}"
-            title="${opt.label}"
-          >${hasColor ? '' : opt.label}</button>`;
+          >
+            ${hasColor ? `<span class="variant-swatch" style="background:${opt.hex};"></span>` : ''}
+            <span class="variant-opt-label">${opt.label}</span>
+          </button>`;
         }).join('')}
       </div>
     </div>
