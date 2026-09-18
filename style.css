@@ -511,8 +511,14 @@ body::after {
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(0,0,0,0.35);
+  color: rgba(0, 0, 0, 0.35);
   margin-bottom: 8px;
+}
+
+.variant-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
 .variant-opt {
@@ -521,25 +527,19 @@ body::after {
   font-weight: 700;
   padding: 6px 16px;
   border-radius: 999px;
-  border: 2px solid rgba(231,12,106,0.28);
+  border: 2px solid rgba(231, 12, 106, 0.28);
   background: transparent;
   color: var(--pink);
   cursor: pointer;
   transition: all 0.18s;
-}
-.variant-swatch {
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  border: 1px solid rgba(0,0,0,0.15);
-  flex-shrink: 0;
+  
+  /* Prevent contents from being squashed */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
 }
 
-.variant-options {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
 .variant-opt.selected {
   background: var(--pink);
   color: white;
@@ -547,38 +547,41 @@ body::after {
 }
 
 /* ── COLOR VARIANT PILLS ──────────────────────── */
-/* pill has a color: show a swatch dot + tinted border */
+
 .variant-opt.has-color {
   padding-left: 10px;
-  display: flex;
-  align-items: center;
-  gap: 7px;
+  padding-right: 14px;
 }
 
-.variant-opt.has-color::before {
-  content: '';
+/* Actual circular colour swatch */
+.variant-swatch {
   display: inline-block;
-  width: 13px;
-  height: 13px;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+  max-width: 18px;
+  max-height: 18px;
+
   border-radius: 50%;
-  background: var(--opt-color);
-  border: 1.5px solid rgba(0,0,0,0.12);
-  flex-shrink: 0;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+
+  flex: 0 0 18px;
+  box-sizing: border-box;
 }
 
-/* unselected: tint border to the swatch color */
+/* Unselected colour variant */
 .variant-opt.has-color:not(.selected) {
   border-color: var(--opt-color);
   color: var(--text);
 }
 
-/* selected: fill with the swatch color */
+/* Selected colour variant */
 .variant-opt.has-color.selected {
   background: var(--opt-color);
   border-color: var(--opt-color);
   color: white;
-  /* keep text readable on very light shades */
-  text-shadow: 0 1px 2px rgba(0,0,0,0.25);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
 }
 
 .qty-row {

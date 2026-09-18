@@ -276,12 +276,16 @@ function openDetail(product) {
             ? `background:${opt.hex};border-color:${opt.hex};color:#fff;`
             : '';
           return `<button
-            class="variant-opt ${i === 0 ? 'selected' : ''}"
+            class="variant-opt ${hasColor ? 'has-color' : ''} ${i === 0 ? 'selected' : ''}"
             data-label="${opt.label}"
             data-hex="${opt.hex || ''}"
+            ${hasColor ? `style="--opt-color: ${opt.hex};"` : ''}
             onclick="selectVariant(this)"
           >
-            ${hasColor ? `<span class="variant-swatch" style="background:${opt.hex};"></span>` : ''}
+            ${hasColor
+              ? `<span class="variant-swatch" style="background-color: ${opt.hex};"></span>`
+              : ''
+            }
             <span class="variant-opt-label">${opt.label}</span>
           </button>`;
         }).join('')}
